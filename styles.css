@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Cambiar según sea necesario */
 }
 
 .slider {
@@ -18,14 +18,14 @@ body {
     max-width: 1170px;
     height: 400px;
     overflow: hidden;
-    background: transparent;
-    border-radius: 10px;
+    background: transparent; /* Fondo transparente */
+    border: none; /* Elimina cualquier borde */
 }
 
 .slider-container {
     display: flex;
     transition: transform 0.5s ease;
-    gap: 10px; /* Espaciado entre imágenes */
+    gap: 0; /* Sin espacio entre imágenes */
 }
 
 .slide {
@@ -41,31 +41,38 @@ body {
     transform: scale(1); /* Escala normal para la imagen activa */
 }
 
+/* Botones de navegación */
 .nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.5); /* Fondo semitransparente */
-    border: none;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    border: none; /* Sin borde */
     cursor: pointer;
-    border-radius: 50%;
-    padding: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 50%; /* Forma circular */
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
 }
 
 .nav.prev {
-    left: 10px;
+    left: 10px; /* Posicionado al extremo izquierdo */
 }
 
 .nav.next {
-    right: 10px;
+    right: 10px; /* Posicionado al extremo derecho */
 }
 
 .nav img {
-    width: 40px;
-    height: 40px;
+    width: 20px; /* Tamaño del ícono */
+    height: 20px;
 }
 
+/* Responsividad */
 @media (max-width: 768px) {
     .slider {
         height: auto;
@@ -73,15 +80,23 @@ body {
     .slide {
         height: auto;
     }
+    .nav {
+        width: 40px;
+        height: 40px;
+    }
     .nav img {
-        width: 30px;
-        height: 30px;
+        width: 15px;
+        height: 15px;
     }
 }
 
 @media (max-width: 480px) {
+    .nav {
+        width: 30px;
+        height: 30px;
+    }
     .nav img {
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
     }
 }
