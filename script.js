@@ -22,4 +22,4 @@ function updateSlider() {
 }
 
 // Desplazamiento automático cada 3 segundos
-setInterval(nextSlide, 3000);
+setInterval(nextSlide, 6000);
