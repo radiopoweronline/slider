@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent; /* Cambiar según sea necesario */
+}
+
+.slider {
+    position: relative;
+    width: 1170px;
+    height: 400px;
+    overflow: hidden;
+    background: transparent; /* Fondo transparente */
+    border: none; /* Sin bordes */
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 1170px; /* Ajustado al ancho de las imágenes */
+    height: 400px; /* Ajustado al alto de las imágenes */
+    object-fit: cover;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; /* Forma circular */
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Por encima de otros elementos */
+}
+
+.nav.prev {
+    left: 5px; /* Botón alineado al borde izquierdo */
+}
+
+.nav.next {
+    right: 5px; /* Botón alineado al borde derecho */
+}
+
+.nav img {
+    width: 20px; /* Tamaño del ícono */
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .slider {
+        width: 100%;
+        height: auto;
+    }
+    .slide {
+        width: 100%;
+        height: auto;
+    }
+    .nav {
+        width: 40px;
+        height: 40px;
+    }
+    .nav img {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        width: 30px;
+        height: 30px;
+    }
+    .nav img {
+        width: 10px;
+        height: 10px;
+    }
+}
